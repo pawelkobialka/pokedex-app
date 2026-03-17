@@ -46,6 +46,8 @@ button.addEventListener("click", function()  {
         image.src = data.sprites.front_default;
         typeElement.textContent = data.types[0].type.name;
 
+        typeElement.style.backgroundColor = typeColors[pokemonType];
+
         card.style.backgroundColor = typeColors[pokemonType];
 
         const cardLink = document.getElementById("cardmarketlink");
@@ -91,8 +93,11 @@ input.addEventListener("input", function(){
     suggestions.innerHTML = "";
 
     if (value.length === 0){
+        suggestions.style.display = "none";
         return;
     }
+
+    suggestions.style.display = "block";
 
     const filtered = pokemonList.filter(function(pokemon){
         return pokemon.name.startsWith(value);

@@ -3,8 +3,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #575754, #0f0f0f);
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
     font-family: Arial;
+}
+
+h2 {
+    margin: 10px 0 5px;
 }
 
 .card {
@@ -44,7 +48,8 @@ button:hover {
 }
 
 img {
-    width: 150px;
+    width: 200px;
+    margin: 20px 0;
 }
 
 input {
@@ -52,6 +57,12 @@ input {
     border-radius: 10px;
     border: 1px solid #ccc;
     flex: 1;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid #888;
+    outline: none;
 }
 
 .background {
@@ -83,7 +94,7 @@ input {
 
 #suggestions {
     background: white;
-    border: 1px solid #ccc;
+    display: none;
     border-radius: 8px;
     margin-top: 5px;
     text-align: left;
@@ -94,6 +105,11 @@ input {
     z-index: 10;
     max-height: 200px;
     overflow-y: auto;
+}
+
+#suggestions.active {
+    display: block;
+    border: 1px solid #ccc;
 }
 
 .suggestion {
@@ -110,3 +126,30 @@ input {
     width: 100%;
 }
 
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
