@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #575754, #0f0f0f);
+    font-family: Arial;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    transition: 0,3s;
+
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+#przycisk {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    color:red;
+}
+
+img {
+    width: 150px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.pokeball {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png") no-repeat center/contain;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+#suggestions {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: lightgray;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
